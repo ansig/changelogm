@@ -24,7 +24,7 @@ def main():
         description="A CLI for the Changelog Manager tool", 
         epilog=_commands_desc(names), 
         formatter_class=argparse.RawDescriptionHelpFormatter)
-    arg_parser.add_argument("-f", "--file", type=str, action='store', default="CHANGELOG.md", 
+    arg_parser.add_argument("-f", "--filename", type=str, action='store', default="CHANGELOG.md", 
         help="path to the changelog file to operate on (default: CHANGELOG.md)")
     arg_parser.add_argument("COMMAND", type=str, help="name of the CLI function to run")
     args, command_args = arg_parser.parse_known_args()
@@ -35,4 +35,4 @@ def main():
         sys.exit(1)
 
     f = getattr(cli, args.COMMAND)
-    f(args.file, command_args)
+    f(args.filename, *command_args)
