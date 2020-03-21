@@ -22,29 +22,29 @@ class TestParsing(unittest.TestCase):
         changelog_etree = E.changelog(
             E.h1('Changelog'),
             E.p('This is the introduction text. It ', E.i('explains'), ' something ', E.b('vital')),
-            E.h2('[Kommande]'),
-            E.h3('Ändrat'),
+            E.h2('[Unreleased]'),
+            E.h3('Changed'),
             E.ul(
-                E.li('[ABC-123] Detta har ändrats')
+                E.li('[ABC-123] This has changed')
             ),
             E.h2('[1.0.0]'),
-            E.h3('Tillagt'),
+            E.h3('Added'),
             E.ul(
-                E.li('[DEF-456] Detta har lagts till')
+                E.li('[DEF-456] This was added')
             ),
-            E.h3('Ändrat'),
+            E.h3('Changed'),
             E.ul(
-                E.li('[GHI-789] Och detta'),
-                E.li('[JKL-011] Ändrat detta')
+                E.li('[GHI-789] X was changed to Y'),
+                E.li('[JKL-011] Something was changed')
             )
         )
         output = parsing.parse_changelog_etree(changelog_etree)
         expected = {
-            '[Kommande]': {
-                'Ändrat': ['[ABC-123] Detta har ändrats']},
+            '[Unreleased]': {
+                'Changed': ['[ABC-123] This has changed']},
             '[1.0.0]': {
-                'Tillagt': ['[DEF-456] Detta har lagts till'],
-                'Ändrat': ['[GHI-789] Och detta', '[JKL-011] Ändrat detta']
+                'Added': ['[DEF-456] This was added'],
+                'Changed': ['[GHI-789] X was changed to Y', '[JKL-011] Something was changed']
             }
         }
         self.assertDictEqual(output, expected)

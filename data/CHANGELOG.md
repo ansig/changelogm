@@ -1,41 +1,49 @@
 # API Changelog
 
-This is an example of a changelog that are used in the tests.
+This is an **example** of a changelog that are used in the *tests*.
 
-This is the **intro** text and it *explains* something.
+The following headers can be used (one for each type of change):
 
-Följande rubriker får användas:
-- `Ändrat` - nåt har ändrats
-- `Tillagt` - nåt är tillagt
-- `Borttaget` - nåt är borttaget
+- `Added` - for new features
+- `Changed` - for changes in existing functionality
+- `Deprecated`- for soon-to-be removed functionality
+- `Removed` - for now removed functionality
+- `Fixed`- for any bug fixes
+- `Security` - in case of vulnerabilities
 
-Jag lägger till en rad här som avslutning på introt
-för att verifiera paragrafer med flera rader.
+I am adding another row here in the introduction
+just to verify that paragraphs with multiple rows look ok.
 
-## [Kommande]
+## [Unreleased]
 
-### Ändrat
-- [ABC-123] Detta är ändrat
-- [DEF-456] Detta är också ändrat
+### Changed
+- [ABC-123] This is changed
+- [DEF-456] Now this changed too
 
-### Borttaget
-- [GHI-789] Detta har vi tagit bort
+### Removed
+- [XYZ-137] This was removed now!
 
 ## [1.3.1]
 
-### Rättning
-- [FOO-000] Har rättat denna [funktion](https://example.com) här
+### Fixed
+- [FOO-000] This function has been corrected (see [example](https://example.com) for more info)
+
+### Deprecated
+- [XYZ-137] This will be removed
 
 ## [1.3.0]
 
-### Tillagt
-- [CBA-321] Lagt till ny funktion här (med `foo`)
+### Added
+- [CBA-321] Added something new here (with `foo`)
 
-### Ändrat
-- [FED-654] Nu har vi ändrat detta
-- [BAR-111] Har ändrat detta
+### Changed
+- [FED-654] We've changed this now
+- [BAR-111] This has changed
+
+### Security
+- [SECURITY-0001] After a warning we have now mitigated this hole
 
 ## [1.2.0]
 
-### Tillagt
-- [QUX-222] Det här la vi till
+### Added
+- [QUX-222] We added this thing

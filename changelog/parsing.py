@@ -41,11 +41,11 @@ def _parse_xhtml(text):
     return root
 
 def _validate_section(title):
-    if not re.fullmatch("\[(\d+\.\d+\.\d+|Kommande)\]", title):
-        raise Exception("Section title must be version number or 'Kommande' enclosed in brackets ([n.n.n] or [Kommande]) but was: {}".format(title))
+    if not re.fullmatch("\[(\d+\.\d+\.\d+|Unreleased)\]", title):
+        raise Exception("Section title must be version number or 'Unreleased' enclosed in brackets ([n.n.n] or [Unreleased]) but was: {}".format(title))
 
 def _validate_subsection(title):
-    allowed_sections = ["Ändrat", "Borttaget", "Tillagt", "Rättning"]
+    allowed_sections = ["Added", "Changed", "Deprecated", "Removed", "Fixed", "Security"]
     if title not in allowed_sections:
         raise Exception("Subsection title '{}' is not one of: {}".format(title, allowed_sections))
 
